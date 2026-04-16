@@ -30,4 +30,5 @@ npm run dev
 ## Suggested next steps
 - connect inquiry form to email or WhatsApp flow
 - replace demo artworks with CMS or structured content source
-- add custom branding, favicon, and social preview image
+- replace placeholder metadata base URL before production deploy
+- add custom branding and social preview image

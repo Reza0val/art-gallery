@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     template: "%s | Art Gallery",
   },
   description: "A minimal private art collection website with inquiry flow.",
+  metadataBase: new URL("https://art-gallery.example.com"),
   openGraph: {
     title: "Art Gallery",
     description: "A minimal private art collection website with inquiry flow.",
