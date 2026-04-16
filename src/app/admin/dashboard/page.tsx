@@ -27,9 +27,7 @@ export default function AdminDashboard() {
     router.push("/admin");
   };
 
-  const studioUrl = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
-    ? `https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.sanity.studio`
-    : "#";
+  const studioUrl = "/studio";
 
   if (!authed) return null;
 
@@ -65,8 +63,6 @@ export default function AdminDashboard() {
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <a
             href={studioUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             style={{
               display: "flex",
               alignItems: "center",
