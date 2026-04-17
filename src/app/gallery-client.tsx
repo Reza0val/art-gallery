@@ -652,6 +652,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
 
   return (
     <div style={styles.page}>
+      {/* TEST: Padding fix deployed at 04:32 UTC */}
       <header style={styles.header}>
         <div style={{ ...styles.shell, ...styles.headerRow }}>
           <a href="#top" style={styles.brand}>
