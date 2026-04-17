@@ -198,7 +198,6 @@ function FaqItem({ item, open, onToggle }: FaqItemProps) {
       <button
         onClick={onToggle}
         style={{
-          width: "100%",
           border: "none",
           background: "transparent",
           padding: "22px 0",
@@ -211,6 +210,7 @@ function FaqItem({ item, open, onToggle }: FaqItemProps) {
           fontSize: 18,
           fontWeight: 500,
           color: TOKENS.text,
+          width: "100%",
         }}
       >
         <span>{item.q}</span>
@@ -232,7 +232,7 @@ function FaqItem({ item, open, onToggle }: FaqItemProps) {
           >
             <div
               style={{
-                paddingBottom: 22,
+                padding: "0 28px 22px 0",
                 color: TOKENS.textSoft,
                 lineHeight: 1.8,
                 maxWidth: 760,
@@ -550,6 +550,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
     },
     narrative: {
       maxWidth: 860,
+      paddingLeft: 28,
+      paddingRight: 28,
     },
     footer: {
       borderTop: `1px solid ${TOKENS.border}`,
