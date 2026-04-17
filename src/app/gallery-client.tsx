@@ -198,7 +198,6 @@ function FaqItem({ item, open, onToggle }: FaqItemProps) {
       <button
         onClick={onToggle}
         style={{
-          width: "100%",
           border: "none",
           background: "transparent",
           padding: "22px 0",
@@ -211,6 +210,8 @@ function FaqItem({ item, open, onToggle }: FaqItemProps) {
           fontSize: 18,
           fontWeight: 500,
           color: TOKENS.text,
+          width: "100%",
+          boxSizing: "border-box",
         }}
       >
         <span>{item.q}</span>
@@ -232,7 +233,7 @@ function FaqItem({ item, open, onToggle }: FaqItemProps) {
           >
             <div
               style={{
-                paddingBottom: 22,
+                padding: "0 0 22px 0",
                 color: TOKENS.textSoft,
                 lineHeight: 1.8,
                 maxWidth: 760,
@@ -315,8 +316,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       width: "100%",
       maxWidth: 1320,
       margin: "0 auto",
-      paddingLeft: "max(20px, env(safe-area-inset-left, 20px))",
-      paddingRight: "max(20px, env(safe-area-inset-right, 20px))",
+      paddingLeft: "28px",
+      paddingRight: "28px",
       boxSizing: "border-box" as const,
     },
     header: {
@@ -374,10 +375,10 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
     hero: {
       display: "grid",
       gridTemplateColumns: "1.05fr 0.95fr",
-      gap: 52,
+      gap: 64,
       alignItems: "center",
-      minHeight: "calc(88vh - 72px)",
-      padding: "28px 20px 20px",
+      minHeight: "calc(90vh - 72px)",
+      padding: "36px 28px 28px",
     },
     heroImageWrap: {
       width: "100%",
@@ -397,7 +398,9 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       textTransform: "uppercase" as const,
       letterSpacing: "0.28em",
       color: TOKENS.textMuted,
-      marginBottom: 16,
+      marginBottom: 20,
+      paddingLeft: 28,
+      paddingRight: 28,
     },
     heroTitle: {
       margin: 0,
@@ -411,6 +414,12 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       fontSize: 18,
       lineHeight: 1.8,
       maxWidth: 640,
+      paddingLeft: 28,
+      paddingRight: 28,
+    },
+    textContainer: {
+      paddingLeft: 28,
+      paddingRight: 28,
     },
     buttonRow: {
       marginTop: 32,
@@ -420,7 +429,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
     },
     primaryButton: {
       borderRadius: 999,
-      padding: "14px 24px",
+      padding: "16px 28px",
       border: `1px solid ${TOKENS.text}`,
       background: TOKENS.text,
       color: TOKENS.bg,
@@ -429,7 +438,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
     },
     secondaryButton: {
       borderRadius: 999,
-      padding: "14px 24px",
+      padding: "16px 28px",
       border: `1px solid ${TOKENS.border}`,
       background: TOKENS.bg,
       color: TOKENS.text,
@@ -437,14 +446,14 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       fontSize: 14,
     },
     section: {
-      padding: "76px 0",
+      padding: "96px 0",
     },
     sectionHeader: {
       marginBottom: 32,
       display: "flex",
       alignItems: "flex-end",
       justifyContent: "space-between",
-      gap: 24,
+      gap: 32,
       flexWrap: "wrap" as const,
     },
     sectionTitle: {
@@ -452,6 +461,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       fontSize: 52,
       lineHeight: 1.05,
       fontWeight: 500,
+      paddingLeft: 28,
+      paddingRight: 28,
     },
     filters: {
       width: "100%",
@@ -475,7 +486,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
     galleryGrid: {
       display: "grid",
       gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
-      gap: 24,
+      gap: 32,
     },
     artworkButton: {
       border: "none",
@@ -524,7 +535,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       overflow: "hidden",
     },
     detailTitle: {
-      margin: "10px 0 0",
+      margin: "14px 0 0",
       fontSize: 42,
       lineHeight: 1.08,
       fontWeight: 500,
@@ -546,10 +557,12 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
     },
     narrative: {
       maxWidth: 860,
+      paddingLeft: 28,
+      paddingRight: 28,
     },
     footer: {
       borderTop: `1px solid ${TOKENS.border}`,
-      padding: "32px 0 40px",
+      padding: "40px 0 48px",
     },
     footerRow: {
       display: "flex",
@@ -594,7 +607,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
           gridTemplateColumns: "1fr",
           gap: 24,
           minHeight: "auto",
-          padding: "20px 0 0",
+          padding: "20px 28px 0",
         }
       : tablet
         ? { ...styles.hero, gridTemplateColumns: "1fr", gap: 36, minHeight: "auto" }
@@ -725,11 +738,12 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
         </section>
 
         <section id="collection" style={{ ...styles.shell, ...styles.section }}>
-          <div style={styles.sectionHeader}>
-            <div>
-              <div style={styles.overline}>Gallery view</div>
-              <h2 style={responsive.sectionTitle}>The collection</h2>
-            </div>
+          <div style={styles.textContainer}>
+            <div style={styles.sectionHeader}>
+              <div>
+                <div style={styles.overline}>Gallery view</div>
+                <h2 style={responsive.sectionTitle}>The collection</h2>
+              </div>
 
             <div style={responsive.filters}>
               <Field icon={<Filter size={16} />}>
@@ -848,9 +862,10 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
         )}
 
         <section id="narrative" style={{ ...styles.shell, ...styles.section }}>
-          <div style={styles.narrative}>
-            <div style={styles.overline}>Collection narrative</div>
-            <h2 style={responsive.sectionTitle}>On collecting with patience and clarity</h2>
+          <div style={styles.textContainer}>
+            <div style={styles.narrative}>
+              <div style={styles.overline}>Collection narrative</div>
+              <h2 style={responsive.sectionTitle}>On collecting with patience and clarity</h2>
             <p style={styles.paragraph}>
               This collection is guided by a preference for paintings that remain visually compelling over time—works that reveal more through repeated viewing rather than immediate spectacle. The collector is drawn to restraint, material sensitivity, and a sense of calm that deepens with attention.
             </p>
@@ -860,13 +875,15 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
             <p style={styles.paragraph}>
               The site is designed as a quiet digital gallery: minimal, spacious, and centered on the artwork itself. It invites visitors first to look, then to understand, and only afterward to begin the process of acquisition.
             </p>
+            </div>
           </div>
         </section>
 
         <section id="faq" style={{ ...styles.shell, ...styles.section, maxWidth: 920 }}>
-          <div style={styles.overline}>FAQ</div>
-          <h2 style={responsive.sectionTitle}>General inquiries</h2>
-          <div style={{ marginTop: 24, borderBottom: `1px solid ${TOKENS.border}` }}>
+          <div style={styles.textContainer}>
+            <div style={styles.overline}>FAQ</div>
+            <h2 style={responsive.sectionTitle}>General inquiries</h2>
+            <div style={{ marginTop: 24, borderBottom: `1px solid ${TOKENS.border}` }}>
             {faqs.map((item, index) => (
               <FaqItem
                 key={item.q}
@@ -875,6 +892,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
                 onToggle={() => setOpenFaq(openFaq === index ? -1 : index)}
               />
             ))}
+            </div>
           </div>
         </section>
 
