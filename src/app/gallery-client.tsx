@@ -739,12 +739,11 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
         </section>
 
         <section id="collection" style={{ ...styles.shell, ...styles.section }}>
-          <div style={styles.textContainer}>
-            <div style={styles.sectionHeader}>
-              <div>
-                <div style={styles.overline}>Gallery view</div>
-                <h2 style={responsive.sectionTitle}>The collection</h2>
-              </div>
+          <div style={styles.sectionHeader}>
+            <div>
+              <div style={styles.overline}>Gallery view</div>
+              <h2 style={responsive.sectionTitle}>The collection</h2>
+            </div>
 
             <div style={responsive.filters}>
               <Field icon={<Filter size={16} />}>
