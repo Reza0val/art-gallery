@@ -412,6 +412,10 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       lineHeight: 1.8,
       maxWidth: 640,
     },
+    textContainer: {
+      paddingLeft: 28,
+      paddingRight: 28,
+    },
     buttonRow: {
       marginTop: 32,
       display: "flex",
@@ -725,11 +729,12 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
         </section>
 
         <section id="collection" style={{ ...styles.shell, ...styles.section }}>
-          <div style={styles.sectionHeader}>
-            <div>
-              <div style={styles.overline}>Gallery view</div>
-              <h2 style={responsive.sectionTitle}>The collection</h2>
-            </div>
+          <div style={styles.textContainer}>
+            <div style={styles.sectionHeader}>
+              <div>
+                <div style={styles.overline}>Gallery view</div>
+                <h2 style={responsive.sectionTitle}>The collection</h2>
+              </div>
 
             <div style={responsive.filters}>
               <Field icon={<Filter size={16} />}>
@@ -848,9 +853,10 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
         )}
 
         <section id="narrative" style={{ ...styles.shell, ...styles.section }}>
-          <div style={styles.narrative}>
-            <div style={styles.overline}>Collection narrative</div>
-            <h2 style={responsive.sectionTitle}>On collecting with patience and clarity</h2>
+          <div style={styles.textContainer}>
+            <div style={styles.narrative}>
+              <div style={styles.overline}>Collection narrative</div>
+              <h2 style={responsive.sectionTitle}>On collecting with patience and clarity</h2>
             <p style={styles.paragraph}>
               This collection is guided by a preference for paintings that remain visually compelling over time—works that reveal more through repeated viewing rather than immediate spectacle. The collector is drawn to restraint, material sensitivity, and a sense of calm that deepens with attention.
             </p>
@@ -860,12 +866,14 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
             <p style={styles.paragraph}>
               The site is designed as a quiet digital gallery: minimal, spacious, and centered on the artwork itself. It invites visitors first to look, then to understand, and only afterward to begin the process of acquisition.
             </p>
+            </div>
           </div>
         </section>
 
         <section id="faq" style={{ ...styles.shell, ...styles.section, maxWidth: 920 }}>
-          <div style={styles.overline}>FAQ</div>
-          <h2 style={responsive.sectionTitle}>General inquiries</h2>
+          <div style={styles.textContainer}>
+            <div style={styles.overline}>FAQ</div>
+            <h2 style={responsive.sectionTitle}>General inquiries</h2>
           <div style={{ marginTop: 24, borderBottom: `1px solid ${TOKENS.border}` }}>
             {faqs.map((item, index) => (
               <FaqItem
@@ -875,6 +883,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
                 onToggle={() => setOpenFaq(openFaq === index ? -1 : index)}
               />
             ))}
+            </div>
           </div>
         </section>
 
