@@ -315,8 +315,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       width: "100%",
       maxWidth: 1320,
       margin: "0 auto",
-      paddingLeft: "max(20px, env(safe-area-inset-left, 20px))",
-      paddingRight: "max(20px, env(safe-area-inset-right, 20px))",
+      paddingLeft: "20px",
+      paddingRight: "20px",
       boxSizing: "border-box" as const,
     },
     header: {
