@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "deploy:prod": "source /home/reza/.openclaw/workspace/integrations/vercel/.env && npx vercel deploy --prod --yes --token \"$VERCEL_TOKEN\"",
+    "deploy:preview": "source /home/reza/.openclaw/workspace/integrations/vercel/.env && npx vercel deploy --yes --token \"$VERCEL_TOKEN\""
   },
   "dependencies": {
     "@sanity/client": "^7.21.0",
