@@ -48,7 +48,8 @@ const TOKENS = {
 const FALLBACK_IMAGE =
   "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1200&q=80";
 
-function artworkImageUrl(art: Artwork): string {
+function artworkImageUrl(art: Artwork | null): string {
+  if (!art) return FALLBACK_IMAGE;
   if (art.image?.asset) {
     const url = urlFor(art.image as Record<string, unknown>);
     if (url) return url.width(1200).quality(80).url();
@@ -247,7 +248,9 @@ function FaqItem({ item, open, onToggle }: FaqItemProps) {
 }
 
 export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
-  const [selectedArtwork, setSelectedArtwork] = useState(artworks[0]);
+  const [selectedArtwork, setSelectedArtwork] = useState(
+    artworks.length > 0 ? artworks[0] : null
+  );
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [inquiryOpen, setInquiryOpen] = useState(false);
   const [confirmationOpen, setConfirmationOpen] = useState(false);
@@ -312,7 +315,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       width: "100%",
       maxWidth: 1320,
       margin: "0 auto",
-      padding: "0 20px",
+      paddingLeft: "max(20px, env(safe-area-inset-left, 20px))",
+      paddingRight: "max(20px, env(safe-area-inset-right, 20px))",
       boxSizing: "border-box" as const,
     },
     header: {
@@ -373,7 +377,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       gap: 52,
       alignItems: "center",
       minHeight: "calc(88vh - 72px)",
-      padding: "28px 0 20px",
+      padding: "28px 20px 20px",
     },
     heroImageWrap: {
       width: "100%",
@@ -699,7 +703,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
         <section style={{ ...styles.shell, ...responsive.hero }}>
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}>
             <div style={styles.heroImageWrap}>
-              <img src={artworkImageUrl(selectedArtwork)} alt={selectedArtwork.title} style={styles.image} loading="eager" />
+              <img src={artworkImageUrl(selectedArtwork)} alt={selectedArtwork?.title || "Gallery artwork"} style={styles.image} loading="eager" />
             </div>
           </motion.div>
 
@@ -793,53 +797,55 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
           </div>
         </section>
 
-        <section style={{ ...styles.shell, paddingBottom: 18 }}>
-          <div style={styles.detailCard}>
-            <div style={responsive.detailGrid}>
-              <div style={styles.detailImageWrap}>
-                <img
-                  src={artworkImageUrl(selectedArtwork)}
-                  alt={selectedArtwork.title}
-                  style={{ ...styles.image, ...responsive.detailImage }}
-                />
-              </div>
-
-              <div>
-                <div style={styles.overline}>Artwork detail</div>
-                <h3 style={styles.detailTitle}>{selectedArtwork.title}</h3>
-                <p style={{ ...styles.paragraph, marginTop: 16, fontSize: 16 }}>{selectedArtwork.description}</p>
-
-                <div style={responsive.detailTable}>
-                  <div>
-                    <div style={styles.label}>Artist</div>
-                    <div style={styles.value}>{selectedArtwork.artist}</div>
-                  </div>
-                  <div>
-                    <div style={styles.label}>Year</div>
-                    <div style={styles.value}>{selectedArtwork.year}</div>
-                  </div>
-                  <div>
-                    <div style={styles.label}>Genre</div>
-                    <div style={styles.value}>{selectedArtwork.genre}</div>
-                  </div>
-                  <div>
-                    <div style={styles.label}>Material</div>
-                    <div style={styles.value}>{selectedArtwork.material}</div>
-                  </div>
+        {selectedArtwork && (
+          <section style={{ ...styles.shell, paddingBottom: 18 }}>
+            <div style={styles.detailCard}>
+              <div style={responsive.detailGrid}>
+                <div style={styles.detailImageWrap}>
+                  <img
+                    src={artworkImageUrl(selectedArtwork)}
+                    alt={selectedArtwork.title}
+                    style={{ ...styles.image, ...responsive.detailImage }}
+                  />
                 </div>
 
-                <div style={{ marginTop: 24 }}>
-                  <Badge value={selectedArtwork.availability} />
-                </div>
+                <div>
+                  <div style={styles.overline}>Artwork detail</div>
+                  <h3 style={styles.detailTitle}>{selectedArtwork.title}</h3>
+                  <p style={{ ...styles.paragraph, marginTop: 16, fontSize: 16 }}>{selectedArtwork.description}</p>
 
-                <div style={styles.buttonRow}>
-                  <button style={styles.primaryButton} onClick={() => openInquiry(selectedArtwork)}>Acquire painting</button>
-                  <button style={styles.secondaryButton} onClick={() => scrollToSection("faq")}>Learn process</button>
+                  <div style={responsive.detailTable}>
+                    <div>
+                      <div style={styles.label}>Artist</div>
+                      <div style={styles.value}>{selectedArtwork.artist}</div>
+                    </div>
+                    <div>
+                      <div style={styles.label}>Year</div>
+                      <div style={styles.value}>{selectedArtwork.year}</div>
+                    </div>
+                    <div>
+                      <div style={styles.label}>Genre</div>
+                      <div style={styles.value}>{selectedArtwork.genre}</div>
+                    </div>
+                    <div>
+                      <div style={styles.label}>Material</div>
+                      <div style={styles.value}>{selectedArtwork.material}</div>
+                    </div>
+                  </div>
+
+                  <div style={{ marginTop: 24 }}>
+                    <Badge value={selectedArtwork.availability} />
+                  </div>
+
+                  <div style={styles.buttonRow}>
+                    <button style={styles.primaryButton} onClick={() => openInquiry(selectedArtwork)}>Acquire painting</button>
+                    <button style={styles.secondaryButton} onClick={() => scrollToSection("faq")}>Learn process</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         <section id="narrative" style={{ ...styles.shell, ...styles.section }}>
           <div style={styles.narrative}>
