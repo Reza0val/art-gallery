@@ -399,8 +399,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       letterSpacing: "0.28em",
       color: TOKENS.textMuted,
       marginBottom: 20,
-      paddingLeft: 28,
-      paddingRight: 28,
+      paddingLeft: "28px",
+      paddingRight: "28px",
     },
     heroTitle: {
       margin: 0,
@@ -414,12 +414,12 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       fontSize: 18,
       lineHeight: 1.8,
       maxWidth: 640,
-      paddingLeft: 28,
-      paddingRight: 28,
+      paddingLeft: "28px",
+      paddingRight: "28px",
     },
     textContainer: {
-      paddingLeft: 28,
-      paddingRight: 28,
+      paddingLeft: "28px",
+      paddingRight: "28px",
     },
     buttonRow: {
       marginTop: 32,
@@ -461,8 +461,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       fontSize: 52,
       lineHeight: 1.05,
       fontWeight: 500,
-      paddingLeft: 28,
-      paddingRight: 28,
+      paddingLeft: "28px",
+      paddingRight: "28px",
     },
     filters: {
       width: "100%",
@@ -557,8 +557,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
     },
     narrative: {
       maxWidth: 860,
-      paddingLeft: 28,
-      paddingRight: 28,
+      paddingLeft: "28px",
+      paddingRight: "28px",
     },
     footer: {
       borderTop: `1px solid ${TOKENS.border}`,
