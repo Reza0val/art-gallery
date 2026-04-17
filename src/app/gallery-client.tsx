@@ -316,8 +316,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       width: "100%",
       maxWidth: 1320,
       margin: "0 auto",
-      paddingLeft: "28px",
-      paddingRight: "28px",
+      paddingLeft: "24px",
+      paddingRight: "24px",
       boxSizing: "border-box" as const,
     },
     header: {
@@ -378,7 +378,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       gap: 64,
       alignItems: "center",
       minHeight: "calc(90vh - 72px)",
-      padding: "36px 28px 28px",
+      padding: "36px 24px 28px",
     },
     heroImageWrap: {
       width: "100%",
@@ -399,8 +399,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       letterSpacing: "0.28em",
       color: TOKENS.textMuted,
       marginBottom: 20,
-      paddingLeft: "28px",
-      paddingRight: "28px",
+      paddingLeft: "24px",
+      paddingRight: "24px",
     },
     heroTitle: {
       margin: 0,
@@ -414,12 +414,12 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       fontSize: 18,
       lineHeight: 1.8,
       maxWidth: 640,
-      paddingLeft: "28px",
-      paddingRight: "28px",
+      paddingLeft: "24px",
+      paddingRight: "24px",
     },
     textContainer: {
-      paddingLeft: "28px",
-      paddingRight: "28px",
+      paddingLeft: "24px",
+      paddingRight: "24px",
     },
     buttonRow: {
       marginTop: 32,
@@ -461,8 +461,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       fontSize: 52,
       lineHeight: 1.05,
       fontWeight: 500,
-      paddingLeft: "28px",
-      paddingRight: "28px",
+      paddingLeft: "24px",
+      paddingRight: "24px",
     },
     filters: {
       width: "100%",
@@ -557,8 +557,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
     },
     narrative: {
       maxWidth: 860,
-      paddingLeft: "28px",
-      paddingRight: "28px",
+      paddingLeft: "24px",
+      paddingRight: "24px",
     },
     footer: {
       borderTop: `1px solid ${TOKENS.border}`,
@@ -607,7 +607,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
           gridTemplateColumns: "1fr",
           gap: 24,
           minHeight: "auto",
-          padding: "20px 28px 0",
+          padding: "20px 24px 0",
         }
       : tablet
         ? { ...styles.hero, gridTemplateColumns: "1fr", gap: 36, minHeight: "auto" }
