@@ -211,6 +211,7 @@ function FaqItem({ item, open, onToggle }: FaqItemProps) {
           fontWeight: 500,
           color: TOKENS.text,
           width: "100%",
+          boxSizing: "border-box",
         }}
       >
         <span>{item.q}</span>
@@ -232,7 +233,7 @@ function FaqItem({ item, open, onToggle }: FaqItemProps) {
           >
             <div
               style={{
-                padding: "0 28px 22px 0",
+                padding: "0 0 22px 0",
                 color: TOKENS.textSoft,
                 lineHeight: 1.8,
                 maxWidth: 760,
@@ -876,7 +877,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
           <div style={styles.textContainer}>
             <div style={styles.overline}>FAQ</div>
             <h2 style={responsive.sectionTitle}>General inquiries</h2>
-          <div style={{ marginTop: 24, borderBottom: `1px solid ${TOKENS.border}` }}>
+            <div style={{ marginTop: 24, borderBottom: `1px solid ${TOKENS.border}` }}>
             {faqs.map((item, index) => (
               <FaqItem
                 key={item.q}
