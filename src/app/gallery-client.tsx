@@ -399,6 +399,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       letterSpacing: "0.28em",
       color: TOKENS.textMuted,
       marginBottom: 20,
+      paddingLeft: 28,
+      paddingRight: 28,
     },
     heroTitle: {
       margin: 0,
@@ -412,6 +414,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       fontSize: 18,
       lineHeight: 1.8,
       maxWidth: 640,
+      paddingLeft: 28,
+      paddingRight: 28,
     },
     textContainer: {
       paddingLeft: 28,
@@ -457,6 +461,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       fontSize: 52,
       lineHeight: 1.05,
       fontWeight: 500,
+      paddingLeft: 28,
+      paddingRight: 28,
     },
     filters: {
       width: "100%",
