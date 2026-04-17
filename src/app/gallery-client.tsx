@@ -315,8 +315,8 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       width: "100%",
       maxWidth: 1320,
       margin: "0 auto",
-      paddingLeft: "20px",
-      paddingRight: "20px",
+      paddingLeft: "28px",
+      paddingRight: "28px",
       boxSizing: "border-box" as const,
     },
     header: {
@@ -377,7 +377,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       gap: 64,
       alignItems: "center",
       minHeight: "calc(90vh - 72px)",
-      padding: "36px 20px 28px",
+      padding: "36px 28px 28px",
     },
     heroImageWrap: {
       width: "100%",
