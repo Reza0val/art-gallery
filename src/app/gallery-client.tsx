@@ -594,7 +594,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
           gridTemplateColumns: "1fr",
           gap: 24,
           minHeight: "auto",
-          padding: "20px 0 0",
+          padding: "20px 28px 0",
         }
       : tablet
         ? { ...styles.hero, gridTemplateColumns: "1fr", gap: 36, minHeight: "auto" }
