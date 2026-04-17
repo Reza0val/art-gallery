@@ -374,10 +374,10 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
     hero: {
       display: "grid",
       gridTemplateColumns: "1.05fr 0.95fr",
-      gap: 52,
+      gap: 64,
       alignItems: "center",
-      minHeight: "calc(88vh - 72px)",
-      padding: "28px 20px 20px",
+      minHeight: "calc(90vh - 72px)",
+      padding: "36px 20px 28px",
     },
     heroImageWrap: {
       width: "100%",
@@ -397,7 +397,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       textTransform: "uppercase" as const,
       letterSpacing: "0.28em",
       color: TOKENS.textMuted,
-      marginBottom: 16,
+      marginBottom: 20,
     },
     heroTitle: {
       margin: 0,
@@ -420,7 +420,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
     },
     primaryButton: {
       borderRadius: 999,
-      padding: "14px 24px",
+      padding: "16px 28px",
       border: `1px solid ${TOKENS.text}`,
       background: TOKENS.text,
       color: TOKENS.bg,
@@ -429,7 +429,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
     },
     secondaryButton: {
       borderRadius: 999,
-      padding: "14px 24px",
+      padding: "16px 28px",
       border: `1px solid ${TOKENS.border}`,
       background: TOKENS.bg,
       color: TOKENS.text,
@@ -437,14 +437,14 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       fontSize: 14,
     },
     section: {
-      padding: "76px 0",
+      padding: "96px 0",
     },
     sectionHeader: {
       marginBottom: 32,
       display: "flex",
       alignItems: "flex-end",
       justifyContent: "space-between",
-      gap: 24,
+      gap: 32,
       flexWrap: "wrap" as const,
     },
     sectionTitle: {
@@ -475,7 +475,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
     galleryGrid: {
       display: "grid",
       gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
-      gap: 24,
+      gap: 32,
     },
     artworkButton: {
       border: "none",
@@ -524,7 +524,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
       overflow: "hidden",
     },
     detailTitle: {
-      margin: "10px 0 0",
+      margin: "14px 0 0",
       fontSize: 42,
       lineHeight: 1.08,
       fontWeight: 500,
@@ -549,7 +549,7 @@ export default function GalleryClient({ artworks }: { artworks: Artwork[] }) {
     },
     footer: {
       borderTop: `1px solid ${TOKENS.border}`,
-      padding: "32px 0 40px",
+      padding: "40px 0 48px",
     },
     footerRow: {
       display: "flex",
